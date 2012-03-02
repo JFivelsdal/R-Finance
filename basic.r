@@ -6,7 +6,7 @@
 
 discount_factor <- function(discount_rate, t, continuous = T){
     if (continuous){
-		return(exp(-discount_rate*t))
+	return(exp(-discount_rate*t))
     }else{
         return((1 + discount_rate) ^ -t)
     }
