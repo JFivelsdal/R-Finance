@@ -3,7 +3,7 @@
 
 
 
-get_yield_to_maturity <- function (trade_price, time_to_maturity, current_coupon ,eps = 0.00001 ){
+GetYieldToMaturity <- function (trade_price, time_to_maturity, current_coupon ,eps = 0.00001 ){
     payment_t <- seq(time_to_maturity %% 0.5, time_to_maturity , by = 0.5)
     payment_list <- rep(current_coupon, length(payment_t) )
     payment_list[length(payment_list)] <- payment_list[length(payment_list)] + 100
