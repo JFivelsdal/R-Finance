@@ -4,7 +4,7 @@
 #}
 
 
-discount_factor <- function(discount_rate, t, continuous = T){
+DiscountFactor <- function(discount_rate, t, continuous = T){
     if (continuous){
 	return(exp(-discount_rate*t))
     }else{
