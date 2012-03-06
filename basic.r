@@ -5,9 +5,9 @@
 
 
 DiscountFactor <- function(discount_rate, t, continuous = T){
-    if (continuous){
-	return(exp(-discount_rate*t))
-    }else{
-        return((1 + discount_rate) ^ -t)
-    }
+  if (continuous){
+     return(exp(-discount_rate*t))
+  }else{
+    return((1 + discount_rate) ^ -t)
+  }
 }
