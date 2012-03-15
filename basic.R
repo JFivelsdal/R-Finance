@@ -13,15 +13,6 @@ DiscountFactor <- function(discount_rate, t, continuous = T){
 }
 
 
-
-
-FindRoot <- function(expr, interval, b = 0.1 , eps = 0.0001){
-  for (x in seq(from=interval[1], to=interval[2], by=b)){
-    print(x)
-    print (eval(expr))
-	if (eval(expr) <= abs(eps)){
-      return (x)	
-	}
-  }
-  return(F)
+CAPM <- function(a, b, rf, rm){
+  return(a + b(rm - rf))
 }

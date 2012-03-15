@@ -14,3 +14,18 @@ InfoRatio <- function(rp, rb){
 JensenAplha <- function(a, b, rp, rf, rm){
   return(rp - (a + b(rm - rf)))
 }
+
+#geometri average return
+GeoAvgRetrun <- function(r){
+  return((prod(1+r))^(1/length(r)) - 1)
+}
+
+#arithmetric average return
+ArithAvgRetrun <- function(r){
+ return(sum(r)/length(r))
+}
+
+#average log return
+LogAvgRetrun <-cum function(r){
+  return(sum(log(r + 1))/length(r))
+}
