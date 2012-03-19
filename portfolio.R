@@ -26,6 +26,19 @@ ArithAvgRetrun <- function(r){
 }
 
 #average log return
-LogAvgRetrun <-cum function(r){
+LogAvgRetrun <- function(r){
   return(sum(log(r + 1))/length(r))
 }
+
+
+#Portfolio Variance
+PortfolioVariance <- function(v, w, s, r){
+  #sum(w^2 * v^2) + w * s
+}
+
+#Portfolio Expect Return
+PortfolioExpRtn <- function(r, w){
+  return(sum(w * r))
+}
+
+
