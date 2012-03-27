@@ -27,3 +27,9 @@ AgeWeight <- function(l, n){
 VolatilityWeight <- function(T, t, r){
   return((T / t) * r)
 }
+
+#Back Testing with Unconditional Method
+
+LR <- function(p, n, T){
+  return (-2 * log(((1 - p)^(T-n)) * p^n) + 2 * log((1 - n/T)^(T-n) * (n/T)^n ))
+}
