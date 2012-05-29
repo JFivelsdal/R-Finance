@@ -22,10 +22,12 @@ VasicekModel <- function(a, b, n, delta_t, sigma, r = 0.05, dm = 0, dd = 1){
   # a: "speed of reversion".  characterizes the velocity at which such trajectories will regroup around  in time;
   # delta: "instantaneous volatility", measures instant by instant the amplitude of randomness entering the system. Higher  implies more randomness
   rlt <- r
+  r_t <- r
   while ( n > 1 ){
-    dr <- a * (b - r) * delta_t + sigma * rnorm(dd, dm)
-    rlt <- append(rlt, r + dr)
-    r <- dr + r
+    dr <- a * (b - r_t) * delta_t + sigma * rnorm(dd, dm)
+    r_t <- dr + r_t
+    rlt <- append(rlt, r_t)
+    
     n <- n - 1
   }
   return(rlt)
