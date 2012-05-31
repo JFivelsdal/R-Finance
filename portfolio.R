@@ -7,7 +7,7 @@ SharpeRatio <- function(rp, rf){
 
 #Information Ratio
 InfoRatio <- function(rp, rb){
-  return(mean(rp) - mean(rb))/sd(rp-rb))
+  return((mean(rp) - mean(rb))/sd(rp-rb))
 }
 
 #Jensen Alpha 
