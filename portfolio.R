@@ -46,8 +46,7 @@ PortfolioVariance <- function(s, w, p){
     b <- comb.matrix[2,v]
     sec_term <- w[a]*w[b]*s[a]*s[b]*p[a,b] + sec_term
   }
-  
-  return(sum(w^2 * v^2) + sec_term)
+  return(sum(w^2 * s^2) + 2*sec_term)
 }
 
 #Portfolio Expect Return
