@@ -32,8 +32,22 @@ LogAvgRetrun <- function(r){
 
 
 #Portfolio Variance
-PortfolioVariance <- function(v, w, s, r){
-  #sum(w^2 * v^2) + w * s
+PortfolioVariance <- function(s, w, p){
+  #p -->> correlation matrix
+  #s -->> variance vector
+  #w -->> weighted vector 
+  # Attention: length(s) should be equals to length(w)
+  n <- length(s)
+  
+  sec_term <- 0.0
+  comb.matrix <- combn(seq(n),2, fun = NULL, simplify =T)
+  for (v in seq(n/2) ) {
+    a <- comb.matrix[1,v]
+    b <- comb.matrix[2,v]
+    sec_term <- w[a]*w[b]*s[a]*s[b]*p[a,b] + sec_term
+  }
+  
+  return(sum(w^2 * v^2) + sec_term)
 }
 
 #Portfolio Expect Return
